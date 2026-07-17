@@ -10,34 +10,43 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
+      home: PrimeraPantalla()
+    );
+  }
+}
+
+class PrimeraPantalla extends StatelessWidget {
+  const PrimeraPantalla({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         body: Center(
           child: TextButton(
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(
-                  builder: (context) => Pantalla2(),
-                ),
-              );
+                MaterialPageRoute(builder: (context) => SegundaPantalla()));
             },
-            child: Text("Primera Pantalla"),
+            child: Text('Primera Pantalla'),
           ),
         ),
-      ),
-    );
+      );
   }
 }
 
-class Pantalla2 extends StatelessWidget {
-  const Pantalla2({super.key});
+class SegundaPantalla extends StatelessWidget {
+  const SegundaPantalla({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text("Segunda Pantalla"),
-      ),
-    );
+        body: Center(
+          child: TextButton(
+            onPressed: () {},
+            child: Text('Segunda Pantalla'),
+          ),
+        ),
+      );
   }
 }
