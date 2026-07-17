@@ -13,10 +13,30 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         body: Center(
           child: TextButton(
-            onPressed: () {},
-            child: Text('Primera Pantalla'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Pantalla2(),
+                ),
+              );
+            },
+            child: Text("Primera Pantalla"),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class Pantalla2 extends StatelessWidget {
+  const Pantalla2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text("Segunda Pantalla"),
       ),
     );
   }
